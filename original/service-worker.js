@@ -14,16 +14,12 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.20dc3e99613cc2639ea2889020209f36.js"
+  "precache-manifest.dc8076ca23d6160575c6e90541f324f9.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "unlock-music"});
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+workbox.core.skipWaiting();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
